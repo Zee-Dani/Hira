@@ -1,6 +1,7 @@
-package com.hira.hira.model;
+package com.hira.hira.model.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.hira.hira.model.post.Post;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -52,5 +53,10 @@ public class HiraUser {
     private String bannerImage;
 
     private Video video;
+    private List<Friend> friends;
+
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "author",cascade=CascadeType.ALL)
+    private List<Post> posts;
+
 
 }

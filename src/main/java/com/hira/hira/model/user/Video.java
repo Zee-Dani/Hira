@@ -1,9 +1,8 @@
-package com.hira.hira.model;
+package com.hira.hira.model.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;

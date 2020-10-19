@@ -1,4 +1,4 @@
-package com.hira.hira.model;
+package com.hira.hira.model.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
