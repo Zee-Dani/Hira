@@ -2,6 +2,9 @@ package com.hira.hira.model.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hira.hira.model.post.Post;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -9,14 +12,15 @@ import java.sql.Date;
 import java.util.List;
 
 @Entity
-
+@Data
 @Table(name= "hira_user")
-
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class HiraUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;
+
     @Column(nullable=false)
     private String firstname;
 
@@ -40,7 +44,6 @@ public class HiraUser {
     @Column(nullable = false)
     @JsonIgnore
     @ToString.Exclude
-
     private String password;
 
     private Date dateOfBirth;
@@ -52,11 +55,16 @@ public class HiraUser {
 
     private String bannerImage;
 
-    private Video video;
+    @OneToMany
+    private List<Video> video;
+
+    @OneToMany
     private List<Friend> friends;
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "author",cascade=CascadeType.ALL)
     private List<Post> posts;
+
+
 
 
 }

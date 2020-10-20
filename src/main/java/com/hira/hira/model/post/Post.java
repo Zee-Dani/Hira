@@ -1,11 +1,14 @@
 package com.hira.hira.model.post;
 
 import com.hira.hira.model.user.HiraUser;
+import com.hira.hira.model.user.Image;
+import com.hira.hira.model.user.Video;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -20,10 +23,23 @@ public class Post {
     @ManyToOne
     private HiraUser author;
 
-    private String postBody;
+    private String  postContent;
 
-    @OneToMany
+    private LocalDate postCreated;
+
+    private LocalDate postUpdated;
+
+    @OneToMany // one post to many comments because a post   will have a list of comments
     private List<Comment> comment;
 
-    private
+    @OneToMany
+    private  List<Image> image;
+
+    @OneToMany
+    private List<Video> video;
+
+    @OneToMany
+    private  List<Like> likes;
+
+
 }

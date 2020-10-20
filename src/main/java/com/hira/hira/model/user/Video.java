@@ -8,11 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.*;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-
 public class Video {
 
     @Id
