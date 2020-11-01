@@ -14,4 +14,13 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
+    @ManyToOne
+    private HiraUser user;
+
+
+    private String imageUrl;
+
+
 }

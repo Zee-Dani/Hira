@@ -50,20 +50,23 @@ public class HiraUser {
 
     private String profileImage;
 
-    @OneToMany(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
-    private List<Image> allImages;
 
-    private String bannerImage;
+    private String backgroundImage;
 
-    @OneToMany
-    private List<Video> video;
+    @OneToMany(mappedBy = "friendRequestSender" , cascade = CascadeType.ALL)
+    private List<Friend> friendRequestSender;
 
-    @OneToMany
-    private List<Friend> friends;
+    @OneToMany(mappedBy = "friendRequestReceiver", cascade = CascadeType.ALL)
+    private List<Friend> friendRequestReceiver;
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "author",cascade=CascadeType.ALL)
     private List<Post> posts;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private  List<Video> allVideos;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private  List<Image> allImages;
 
 
 

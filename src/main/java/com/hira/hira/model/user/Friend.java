@@ -19,13 +19,15 @@ public class Friend {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     // me befriending someone else
-    private HiraUser befriend;
+    private HiraUser friendRequestSender;
 
-    @OneToOne
+    @ManyToOne
     // me friend to other people
-    private HiraUser friendee;
+    private HiraUser friendRequestReceiver;
 
     private String status;
+
+
 }
