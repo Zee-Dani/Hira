@@ -38,7 +38,7 @@ public class HiraUser {
 
     private String phoneNumber;
 
-    @OneToOne
+    @OneToOne(mappedBy = "user")
     private Address address;
 
     @Column(nullable = false)
@@ -67,7 +67,5 @@ public class HiraUser {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private  List<Image> allImages;
-
-
 
 }

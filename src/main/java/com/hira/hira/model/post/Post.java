@@ -29,16 +29,17 @@ public class Post {
 
     private LocalDate postUpdated;
 
-    @OneToMany // one post to many comments because a post   will have a list of comments
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    // one post to many comments because a post   will have a list of comments
     private List<Comment> comment;
 
-    @OneToMany
+    @OneToMany(mappedBy = "post" , cascade = CascadeType.ALL)
     private  List<Image> image;
 
-    @OneToMany
+    @OneToMany(mappedBy = "post" , cascade = CascadeType.ALL)
     private List<Video> video;
 
-    @OneToMany
+    @OneToMany(mappedBy = "post" , cascade = CascadeType.ALL)
     private  List<Like> likes;
 
 

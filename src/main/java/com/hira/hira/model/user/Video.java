@@ -1,5 +1,6 @@
 package com.hira.hira.model.user;
 
+import com.hira.hira.model.post.Post;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,9 @@ public class Video {
 
     @ManyToOne
     private HiraUser user;
+
+    @ManyToOne
+    private Post post;
 
     private String videoUrl;
 

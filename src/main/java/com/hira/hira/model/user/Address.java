@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data // generates getter and setters for  a class
 @NoArgsConstructor
@@ -27,6 +24,8 @@ public class Address {
 
     private String  country;
 
+    @OneToOne
+    private  HiraUser user;
 
 
 
