@@ -26,6 +26,7 @@ public class AddressTest {
         myAddress.setCountry("nambia");
         myAddress.setStreetname("sabo");
         myAddress.setNumber("090123");
+//        myAddress.setUser();
         assertThat(addressRepository.save(myAddress)).isNotNull();
     }
 }
